@@ -7,18 +7,18 @@
     android:background="@drawable/bg"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/have_account"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/default_margin"
-        android:background="@color/white"
-        android:text="@string/have_account"
-        android:textColor="@color/black"
-        android:textSize="@dimen/medium_font_size"
-        app:layout_constraintEnd_toEndOf="parent"
+    <Button
+        android:id="@+id/button"
+        android:layout_width="@dimen/image_select_size"
+        android:layout_height="@dimen/image_select_size"
+        android:layout_marginStart="@dimen/default_margin"
+        android:layout_marginBottom="@dimen/default_margin"
+        android:background="@drawable/rounded_image_select"
+        android:text="@string/select_photo"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/username_registration"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"/>
 
     <EditText
         android:id="@+id/username_registration"
@@ -71,9 +71,21 @@
         android:layout_height="@dimen/input_height"
         android:layout_marginLeft="@dimen/default_margin"
         android:layout_marginRight="@dimen/default_margin"
-        android:layout_marginBottom="@dimen/default_margin"
         android:background="@color/white"
         android:text="@string/register"
+        app:layout_constraintBottom_toTopOf="@id/have_account"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/have_account"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/default_margin"
+        android:background="@color/white"
+        android:text="@string/have_account"
+        android:textColor="@color/black"
+        android:textSize="@dimen/medium_font_size"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
