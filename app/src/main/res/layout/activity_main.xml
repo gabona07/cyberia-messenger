@@ -14,11 +14,11 @@
         android:layout_margin="@dimen/default_margin"
         android:background="@color/white"
         android:text="@string/have_account"
-        android:textSize="@dimen/medium_font_size"
         android:textColor="@color/black"
-        app:layout_constraintTop_toTopOf="parent"
+        android:textSize="@dimen/medium_font_size"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/username_registration"
@@ -71,6 +71,7 @@
         android:layout_height="@dimen/input_height"
         android:layout_marginLeft="@dimen/default_margin"
         android:layout_marginRight="@dimen/default_margin"
+        android:layout_marginBottom="@dimen/default_margin"
         android:background="@color/white"
         android:text="@string/register"
         app:layout_constraintBottom_toBottomOf="parent"
