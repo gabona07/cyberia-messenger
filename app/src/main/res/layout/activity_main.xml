@@ -12,7 +12,6 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/input_height"
         android:layout_marginLeft="@dimen/default_margin"
-        android:layout_marginTop="420dp"
         android:layout_marginRight="@dimen/default_margin"
         android:autofillHints=""
         android:background="@android:color/white"
@@ -20,15 +19,15 @@
         android:inputType="textPersonName"
         android:padding="@dimen/small_padding"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.842"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toTopOf="@id/email_registration"/>
 
     <EditText
         android:id="@+id/email_registration"
         android:layout_width="match_parent"
         android:layout_height="@dimen/input_height"
-        android:layout_margin="@dimen/default_margin"
+        android:layout_marginLeft="@dimen/default_margin"
+        android:layout_marginRight="@dimen/default_margin"
         android:autofillHints=""
         android:background="@android:color/white"
         android:hint="@string/email"
@@ -36,13 +35,14 @@
         android:padding="@dimen/small_padding"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/username_registration" />
+        app:layout_constraintBottom_toTopOf="@id/password_registration" />
 
     <EditText
         android:id="@+id/password_registration"
         android:layout_width="match_parent"
         android:layout_height="@dimen/input_height"
-        android:layout_margin="@dimen/default_margin"
+        android:layout_marginLeft="@dimen/default_margin"
+        android:layout_marginRight="@dimen/default_margin"
         android:autofillHints=""
         android:background="@android:color/white"
         android:hint="@string/password"
@@ -50,5 +50,16 @@
         android:padding="@dimen/small_padding"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/email_registration" />
+        app:layout_constraintBottom_toTopOf="@id/button"/>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/input_height"
+        android:layout_marginLeft="@dimen/default_margin"
+        android:layout_marginRight="@dimen/default_margin"
+        android:text="@string/register"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/password_registration"
+        app:layout_constraintStart_toStartOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
