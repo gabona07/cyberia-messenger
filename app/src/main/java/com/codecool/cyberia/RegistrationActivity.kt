@@ -7,12 +7,11 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
-import android.util.Log
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
-import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_register.*
 import java.util.*
 
 class RegistrationActivity : AppCompatActivity() {
@@ -21,7 +20,7 @@ class RegistrationActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_register)
 
         have_account.setOnClickListener {
             val intent = Intent(this, LoginActivity::class.java)
@@ -30,8 +29,6 @@ class RegistrationActivity : AppCompatActivity() {
         performRegistration()
         selectPhoto()
     }
-
-
 
     private fun performRegistration() {
 
@@ -51,7 +48,6 @@ class RegistrationActivity : AppCompatActivity() {
                     if (!it.isSuccessful) {
                         return@addOnCompleteListener
                     } else {
-                        Log.d("Main", "Successfully created user with uid: ${it.result?.user?.uid}")
                         uploadImageToDatabase()
                     }
                 }
@@ -77,7 +73,6 @@ class RegistrationActivity : AppCompatActivity() {
         val database = FirebaseDatabase.getInstance().getReference("/users/$uid")
         val user = User(uid, username_registration.text.toString(), profileImageUrl)
         database.setValue(user)
-        Log.d("Registration", "Successfully registered")
     }
 
     private fun selectPhoto() {
@@ -94,8 +89,8 @@ class RegistrationActivity : AppCompatActivity() {
         if (requestCode == 0 && resultCode == Activity.RESULT_OK && data != null) {
             selectedPhotoUri = data.data
             val bitmap = MediaStore.Images.Media.getBitmap(contentResolver, selectedPhotoUri)
-            val bitmapDrawable = BitmapDrawable(bitmap)
-            select_photo_button.setBackgroundDrawable(bitmapDrawable)
+            select_photo_circular.setImageBitmap(bitmap)
+            select_photo_button.alpha = 0f
         }
     }
 
