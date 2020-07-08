@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "217592324578",
+    "firebase_url": "https://cyberiamessenger.firebaseio.com",
+    "project_id": "cyberiamessenger",
+    "storage_bucket": "cyberiamessenger.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:217592324578:android:068a5ceebed773551119bb",
+        "android_client_info": {
+          "package_name": "com.codecool.cyberia"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "217592324578-0upetphhqon8r70s8fvk0gclttn5oq3g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.codecool.cyberia",
+            "certificate_hash": "019327f85bf57f2e8ecb79733bf3d6780024a5ab"
+          }
+        },
+        {
+          "client_id": "217592324578-h0vufa6h32l5lilf9tsqo9o2t4n94vbh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBhJH02pwmMmbES1O8igGbbx3VHRM3iIAk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "217592324578-h0vufa6h32l5lilf9tsqo9o2t4n94vbh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
