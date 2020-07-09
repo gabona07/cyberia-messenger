@@ -64,6 +64,11 @@ class RegistrationActivity : AppCompatActivity() {
         storage.putFile(selectedPhotoUri!!).addOnSuccessListener {
             storage.downloadUrl.addOnSuccessListener {
                 saveUserToDatabase(it.toString())
+                // Start new activity
+                val intent = Intent(this, LatestMessagesActivity::class.java)
+                // Clear previous activities
+                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
+                startActivity(intent)
             }
         }
     }

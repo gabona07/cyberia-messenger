@@ -18,6 +18,8 @@ class LoginActivity : AppCompatActivity() {
             val intent = Intent(this, RegistrationActivity::class.java)
             startActivity(intent)
         }
+        
+        signIn()
     }
 
     private fun signIn() {
@@ -26,7 +28,6 @@ class LoginActivity : AppCompatActivity() {
             val password = password_login.text.toString()
 
             if (email.isEmpty() || password.isEmpty()) {
-                Toast.makeText(this, "Please enter e-mail and password!", Toast.LENGTH_LONG).show()
                 return@setOnClickListener
             }
 
@@ -35,7 +36,9 @@ class LoginActivity : AppCompatActivity() {
                     if (!it.isSuccessful) {
                         return@addOnCompleteListener
                     } else {
-                        Log.d("Login", "Successfully logged in user with uid: ${it.result?.user?.uid}")
+                        val intent = Intent(this, LatestMessagesActivity::class.java)
+                        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
+                        startActivity(intent)
                     }
                 }
 
