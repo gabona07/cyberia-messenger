@@ -13,4 +13,8 @@
     <string name="select_user">Select user</string>
     <string name="username">Username</string>
     <string name="user_image">User Image</string>
+    <string name="send">Send</string>
+    <string name="enter_message">Enter message</string>
+    <string name="this_is_a_message">This is a message</string>
+    <string name="this_is_also_a_message">This is a message that will be longer than expected, so that it will wrap around</string>
 </resources>

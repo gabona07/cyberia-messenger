@@ -1,5 +1,6 @@
 package com.codecool.cyberia.messages
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.codecool.cyberia.R
@@ -17,6 +18,10 @@ import kotlinx.android.synthetic.main.user_row_new_message.view.*
 
 class NewMessageActivity : AppCompatActivity() {
 
+    companion object {
+        val USER_KEY = "USER_NAME"
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_new_message)
@@ -33,10 +38,15 @@ class NewMessageActivity : AppCompatActivity() {
                 snapshot.children.forEach {
                     val user = it.getValue(User::class.java)
                     if (user != null) adapter.add(
-                        UserItem(
-                            user
-                        )
+                        UserItem(user)
                     )
+                }
+                adapter.setOnItemClickListener { item, view ->
+                    val userItem = item as UserItem
+                    val intent = Intent(view.context, ChatLogActivity::class.java)
+                    intent.putExtra(USER_KEY, userItem.user)
+                    startActivity(intent)
+                    finish() // Finishes new message activity/ goes back to the main screen
                 }
                 recyclerview_newmessage.adapter = adapter
             }
