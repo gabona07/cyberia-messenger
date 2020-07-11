@@ -1,7 +1,9 @@
-package com.codecool.cyberia
+package com.codecool.cyberia.messages
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.codecool.cyberia.R
+import com.codecool.cyberia.models.User
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
@@ -30,7 +32,11 @@ class NewMessageActivity : AppCompatActivity() {
                 val adapter = GroupAdapter<ViewHolder>()
                 snapshot.children.forEach {
                     val user = it.getValue(User::class.java)
-                    if (user != null) adapter.add(UserItem(user))
+                    if (user != null) adapter.add(
+                        UserItem(
+                            user
+                        )
+                    )
                 }
                 recyclerview_newmessage.adapter = adapter
             }

@@ -1,10 +1,12 @@
-package com.codecool.cyberia
+package com.codecool.cyberia.messages
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import com.codecool.cyberia.R
+import com.codecool.cyberia.registerlogin.RegistrationActivity
 import com.google.firebase.auth.FirebaseAuth
 
 class LatestMessagesActivity : AppCompatActivity() {

@@ -1,13 +1,15 @@
-package com.codecool.cyberia
+package com.codecool.cyberia.registerlogin
 
 import android.app.Activity
 import android.content.Intent
-import android.graphics.drawable.BitmapDrawable
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
 import android.widget.Toast
+import com.codecool.cyberia.messages.LatestMessagesActivity
+import com.codecool.cyberia.R
+import com.codecool.cyberia.models.User
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
@@ -76,7 +78,11 @@ class RegistrationActivity : AppCompatActivity() {
     private fun saveUserToDatabase(profileImageUrl: String) {
         val uid = FirebaseAuth.getInstance().uid ?: ""
         val database = FirebaseDatabase.getInstance().getReference("/users/$uid")
-        val user = User(uid, username_registration.text.toString(), profileImageUrl)
+        val user = User(
+            uid,
+            username_registration.text.toString(),
+            profileImageUrl
+        )
         database.setValue(user)
     }
 
