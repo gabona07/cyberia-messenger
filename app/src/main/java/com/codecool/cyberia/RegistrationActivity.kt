@@ -98,6 +98,4 @@ class RegistrationActivity : AppCompatActivity() {
             select_photo_button.alpha = 0f
         }
     }
-
-    class User (val uid: String, val username: String, val profileImageUrl: String)
 }

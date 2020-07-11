@@ -10,4 +10,7 @@
     <string name="select_photo">Select photo</string>
     <string name="sign_out">Sign Out</string>
     <string name="new_message">New Message</string>
+    <string name="select_user">Select user</string>
+    <string name="username">Username</string>
+    <string name="user_image">User Image</string>
 </resources>
