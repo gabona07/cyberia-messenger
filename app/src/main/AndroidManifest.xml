@@ -11,16 +11,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar">
-        <activity android:name=".registerlogin.RegistrationActivity">
+        <activity android:name=".registerlogin.RegistrationActivity"/>
+        <activity android:name=".registerlogin.LoginActivity"/>
+        <activity android:name=".messages.LatestMessagesActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity android:name=".registerlogin.LoginActivity">
-        </activity>
-        <activity android:name=".messages.LatestMessagesActivity">
         </activity>
         <activity android:name=".messages.NewMessageActivity">
             <meta-data
@@ -33,5 +31,4 @@
                 android:value=".messages.LatestMessagesActivity" />
         </activity>
     </application>
-
 </manifest>

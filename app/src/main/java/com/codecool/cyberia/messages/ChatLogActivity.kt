@@ -10,6 +10,7 @@ import com.google.firebase.database.ChildEventListener
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
+import com.squareup.picasso.Picasso
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.Item
 import com.xwray.groupie.ViewHolder
@@ -20,6 +21,9 @@ import kotlinx.android.synthetic.main.chat_right.view.*
 class ChatLogActivity : AppCompatActivity() {
 
     val adapter = GroupAdapter<ViewHolder>()
+    var toUser: User? = null
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_chat_log)
@@ -31,8 +35,8 @@ class ChatLogActivity : AppCompatActivity() {
     }
 
     private fun changeActionBarTitle() {
-        val user = intent.getParcelableExtra<User>(NewMessageActivity.USER_KEY)
-        supportActionBar?.title = user?.username
+        toUser = intent.getParcelableExtra<User>(NewMessageActivity.USER_KEY)
+        supportActionBar?.title = toUser?.username
     }
 
     private fun listenForMessages() {
@@ -42,9 +46,10 @@ class ChatLogActivity : AppCompatActivity() {
                 val chatMessage = snapshot.getValue(ChatMessage::class.java)
                 if (chatMessage != null) {
                     if (chatMessage.fromId == FirebaseAuth.getInstance().uid) {
-                        adapter.add(ChatItemRight(chatMessage.text))
+                        val currentUser = LatestMessagesActivity.currentUser
+                        adapter.add(ChatItemRight(chatMessage.text, currentUser!!))
                     } else {
-                        adapter.add(ChatItemLeft(chatMessage.text))
+                        adapter.add(ChatItemLeft(chatMessage.text, toUser!!))
                     }
                 }
             }
@@ -82,22 +87,24 @@ class ChatLogActivity : AppCompatActivity() {
     }
 }
 
-class ChatItemLeft(val text : String) : Item<ViewHolder>() {
+class ChatItemLeft(val text : String, val user: User) : Item<ViewHolder>() {
     override fun getLayout(): Int {
         return R.layout.chat_left
     }
 
     override fun bind(viewHolder: ViewHolder, position: Int) {
         viewHolder.itemView.textView_left.text = text
+        Picasso.get().load(user.profileImageUrl).into(viewHolder.itemView.profile_image_left)
     }
 }
 
-class ChatItemRight(val text : String) : Item<ViewHolder>() {
+class ChatItemRight(val text : String, val user: User) : Item<ViewHolder>() {
     override fun getLayout(): Int {
         return R.layout.chat_right
     }
 
     override fun bind(viewHolder: ViewHolder, position: Int) {
         viewHolder.itemView.textView_right.text = text
+        Picasso.get().load(user.profileImageUrl).into(viewHolder.itemView.profile_image_right)
     }
 }

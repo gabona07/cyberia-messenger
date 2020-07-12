@@ -7,11 +7,13 @@
     android:layout_margin="@dimen/default_margin">
 
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/profile_image_right"
         android:layout_width="@dimen/user_image"
         android:layout_height="@dimen/user_image"
         android:layout_margin="@dimen/default_margin"
+        app:civ_border_width="@dimen/border"
+        app:civ_border_color="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
@@ -25,7 +27,7 @@
         android:padding="@dimen/padding"
         android:layout_margin="@dimen/default_margin"
         android:text="@string/this_is_a_message"
-        app:layout_constraintEnd_toStartOf="@+id/imageView"
+        app:layout_constraintEnd_toStartOf="@+id/profile_image_right"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
