@@ -17,4 +17,5 @@
     <string name="enter_message">Enter message</string>
     <string name="this_is_a_message">This is a message</string>
     <string name="this_is_also_a_message">This is a message that will be longer than expected, so that it will wrap around</string>
+    <string name="latest_message">Latest message</string>
 </resources>
