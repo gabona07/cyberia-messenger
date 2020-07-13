@@ -5,12 +5,15 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import androidx.recyclerview.widget.DividerItemDecoration
 import com.codecool.cyberia.R
 import com.codecool.cyberia.models.ChatMessage
 import com.codecool.cyberia.models.User
 import com.codecool.cyberia.registerlogin.RegistrationActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
+import com.google.firebase.ktx.Firebase
+import com.squareup.picasso.Picasso
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.Item
 import com.xwray.groupie.ViewHolder
@@ -29,6 +32,7 @@ class LatestMessagesActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_latest_messages)
         latest_message_recyclerview.adapter = adapter
+        latest_message_recyclerview.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL))
         listenForLatestMessages()
         fetchCurrentUser()
         verifyUserLoggedIn()
@@ -122,8 +126,25 @@ class LatestMessagesActivity : AppCompatActivity() {
         }
 
         override fun bind(viewHolder: ViewHolder, position: Int) {
-            viewHolder.itemView.user_image_latest_message
-            viewHolder.itemView.username_latest_message
+            val chatPartnerId: String
+            if (chatMessage.fromId == FirebaseAuth.getInstance().uid) {
+                chatPartnerId = chatMessage.toId
+            } else {
+                chatPartnerId = chatMessage.fromId
+            }
+
+            val reference = FirebaseDatabase.getInstance().getReference("/users/$chatPartnerId")
+            reference.addListenerForSingleValueEvent(object : ValueEventListener {
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    val user = snapshot.getValue(User::class.java)
+                    viewHolder.itemView.username_latest_message.text = user?.username
+                    Picasso.get().load(user?.profileImageUrl).into(viewHolder.itemView.user_image_latest_message)
+                }
+
+                override fun onCancelled(error: DatabaseError) {
+
+                }
+            })
             viewHolder.itemView.latest_message.text = chatMessage.text
         }
     }

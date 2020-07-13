@@ -6,6 +6,6 @@
     <dimen name="medium_font_size">18sp</dimen>
     <dimen name="image_select_size">150dp</dimen>
     <dimen name="border">4dp</dimen>
-    <dimen name="user_image">70dp</dimen>
+    <dimen name="user_image">72dp</dimen>
     <dimen name="padding">10dp</dimen>
 </resources>

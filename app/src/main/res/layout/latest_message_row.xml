@@ -6,10 +6,12 @@
     android:layout_width="match_parent"
     android:layout_height="120dp">
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/user_image_latest_message"
         android:layout_width="@dimen/user_image"
         android:layout_height="@dimen/user_image"
+        app:civ_border_width="@dimen/border"
+        app:civ_border_color="@color/black"
         android:layout_margin="@dimen/default_margin"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
