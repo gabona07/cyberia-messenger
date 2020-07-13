@@ -1,10 +1,10 @@
-package com.codecool.cyberia.messages
+package com.codecool.cyberia.view
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.codecool.cyberia.R
-import com.codecool.cyberia.models.User
+import com.codecool.cyberia.model.User
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase

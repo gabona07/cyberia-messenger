@@ -13,22 +13,22 @@
         android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar">
         <activity android:name=".registerlogin.RegistrationActivity"/>
         <activity android:name=".registerlogin.LoginActivity"/>
-        <activity android:name=".messages.LatestMessagesActivity">
+        <activity android:name=".view.LatestMessagesActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".messages.NewMessageActivity">
+        <activity android:name=".view.NewMessageActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".messages.LatestMessagesActivity" />
+                android:value=".view.LatestMessagesActivity" />
         </activity>
-        <activity android:name=".messages.ChatLogActivity">
+        <activity android:name=".view.ChatLogActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".messages.LatestMessagesActivity" />
+                android:value=".view.LatestMessagesActivity" />
         </activity>
     </application>
 </manifest>

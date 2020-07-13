@@ -1,10 +1,10 @@
-package com.codecool.cyberia.messages
+package com.codecool.cyberia.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.codecool.cyberia.R
-import com.codecool.cyberia.models.ChatMessage
-import com.codecool.cyberia.models.User
+import com.codecool.cyberia.model.ChatMessage
+import com.codecool.cyberia.model.User
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.ChildEventListener
 import com.google.firebase.database.DataSnapshot

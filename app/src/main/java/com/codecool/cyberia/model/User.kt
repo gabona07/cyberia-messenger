@@ -1,4 +1,4 @@
-package com.codecool.cyberia.models
+package com.codecool.cyberia.model
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize

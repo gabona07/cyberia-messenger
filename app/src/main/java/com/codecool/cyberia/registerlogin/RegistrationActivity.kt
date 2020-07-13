@@ -7,9 +7,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
 import android.widget.Toast
-import com.codecool.cyberia.messages.LatestMessagesActivity
+import com.codecool.cyberia.view.LatestMessagesActivity
 import com.codecool.cyberia.R
-import com.codecool.cyberia.models.User
+import com.codecool.cyberia.model.User
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
