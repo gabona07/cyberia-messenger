@@ -74,7 +74,6 @@ class ChatLogActivity : AppCompatActivity() {
     private fun sendMessage() {
         send_button.setOnClickListener {
             val text = send_text.text.toString()
-
             val fromId = FirebaseAuth.getInstance().uid
             val user = intent.getParcelableExtra<User>(NewMessageActivity.USER_KEY)
             val toId = user?.uid
@@ -86,7 +85,9 @@ class ChatLogActivity : AppCompatActivity() {
             val chatMessage = ChatMessage(reference.key!!, text, fromId!!, toId!!, System.currentTimeMillis()/1000  )
             reference.setValue(chatMessage)
             toReference.setValue(chatMessage)
+
             send_text.text.clear()
+            chat_log_recyclerview.scrollToPosition(adapter.itemCount - 1)
         }
     }
 
