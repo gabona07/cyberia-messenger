@@ -6,7 +6,7 @@
     <string name="register">Register</string>
     <string name="have_account">Already have an account?</string>
     <string name="login">Login</string>
-    <string name="back_to_registration">Back to registration-></string>
+    <string name="back_to_registration">Back to registration</string>
     <string name="select_photo">Select photo</string>
     <string name="sign_out">Sign Out</string>
     <string name="new_message">New Message</string>
@@ -18,4 +18,5 @@
     <string name="this_is_a_message">This is a message</string>
     <string name="this_is_also_a_message">This is a message that will be longer than expected, so that it will wrap around</string>
     <string name="latest_message">Latest message</string>
+    <string name="shy">shy</string>
 </resources>
