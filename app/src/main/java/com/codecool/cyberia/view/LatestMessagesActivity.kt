@@ -76,8 +76,8 @@ class LatestMessagesActivity : AppCompatActivity() {
     }
 
     private fun refreshRecyclerView() {
+        adapter.clear()
         latestMessagesMap.values.forEach {
-            adapter.clear()
             adapter.add(LatestMessageRow(it))
         }
     }
