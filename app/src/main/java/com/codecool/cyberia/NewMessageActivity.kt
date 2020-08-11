@@ -1,9 +1,8 @@
-package com.codecool.cyberia.view
+package com.codecool.cyberia
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.codecool.cyberia.R
 import com.codecool.cyberia.model.User
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError

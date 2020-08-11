@@ -1,23 +1,20 @@
-package com.codecool.cyberia.view
+package com.codecool.cyberia
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import androidx.recyclerview.widget.DividerItemDecoration
-import com.codecool.cyberia.R
 import com.codecool.cyberia.model.ChatMessage
 import com.codecool.cyberia.model.User
-import com.codecool.cyberia.registerlogin.RegistrationActivity
+import com.codecool.cyberia.view.RegistrationActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
-import com.squareup.picasso.Picasso
 import com.xwray.groupie.GroupAdapter
-import com.xwray.groupie.Item
 import com.xwray.groupie.ViewHolder
 import kotlinx.android.synthetic.main.activity_latest_messages.*
-import kotlinx.android.synthetic.main.latest_message_row.view.*
 
 class LatestMessagesActivity : AppCompatActivity() {
     val adapter = GroupAdapter<ViewHolder>()
@@ -100,8 +97,6 @@ class LatestMessagesActivity : AppCompatActivity() {
         val uid = FirebaseAuth.getInstance().uid
         if (uid == null) {
             val intent = Intent(this, RegistrationActivity::class.java)
-
-            // Clear previous activities
             intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
             startActivity(intent)
         }

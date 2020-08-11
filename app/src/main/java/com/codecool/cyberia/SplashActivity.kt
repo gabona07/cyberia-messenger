@@ -1,10 +1,9 @@
-package com.codecool.cyberia.view
+package com.codecool.cyberia
 
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import androidx.appcompat.app.AppCompatActivity
-import com.codecool.cyberia.R
 
 
 class SplashActivity : AppCompatActivity() {

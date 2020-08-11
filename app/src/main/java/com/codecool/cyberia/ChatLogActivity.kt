@@ -1,8 +1,7 @@
-package com.codecool.cyberia.view
+package com.codecool.cyberia
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.codecool.cyberia.R
 import com.codecool.cyberia.model.ChatMessage
 import com.codecool.cyberia.model.User
 import com.google.firebase.auth.FirebaseAuth
@@ -48,10 +47,21 @@ class ChatLogActivity : AppCompatActivity() {
                 val chatMessage = snapshot.getValue(ChatMessage::class.java)
                 if (chatMessage != null) {
                     if (chatMessage.fromId == FirebaseAuth.getInstance().uid) {
-                        val currentUser = LatestMessagesActivity.currentUser
-                        adapter.add(ChatItemRight(chatMessage.text, currentUser!!))
+                        val currentUser =
+                            LatestMessagesActivity.currentUser
+                        adapter.add(
+                            ChatItemRight(
+                                chatMessage.text,
+                                currentUser!!
+                            )
+                        )
                     } else {
-                        adapter.add(ChatItemLeft(chatMessage.text, toUser!!))
+                        adapter.add(
+                            ChatItemLeft(
+                                chatMessage.text,
+                                toUser!!
+                            )
+                        )
                     }
                 }
             }

@@ -1,6 +1,5 @@
-package com.codecool.cyberia.view
+package com.codecool.cyberia
 
-import com.codecool.cyberia.R
 import com.codecool.cyberia.model.ChatMessage
 import com.codecool.cyberia.model.User
 import com.google.firebase.auth.FirebaseAuth
