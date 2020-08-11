@@ -4,7 +4,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import com.codecool.cyberia.LatestMessagesActivity
 import com.codecool.cyberia.R
 import com.codecool.cyberia.contract.LoginContract
 import com.codecool.cyberia.presenter.LoginPresenter

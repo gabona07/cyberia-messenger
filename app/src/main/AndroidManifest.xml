@@ -20,16 +20,16 @@
         </activity>
         <activity android:name=".view.RegistrationActivity" />
         <activity android:name=".view.LoginActivity" />
-        <activity android:name=".LatestMessagesActivity"/>
+        <activity android:name=".view.LatestMessagesActivity"/>
         <activity android:name=".NewMessageActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".LatestMessagesActivity" />
+                android:value=".view.LatestMessagesActivity" />
         </activity>
         <activity android:name=".ChatLogActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".LatestMessagesActivity" />
+                android:value=".view.LatestMessagesActivity" />
         </activity>
     </application>
 </manifest>

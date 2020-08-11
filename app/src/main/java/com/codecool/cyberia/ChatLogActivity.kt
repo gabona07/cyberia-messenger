@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.codecool.cyberia.model.ChatMessage
 import com.codecool.cyberia.model.User
+import com.codecool.cyberia.presenter.LatestMessagesPresenter
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.ChildEventListener
 import com.google.firebase.database.DataSnapshot
@@ -47,37 +48,21 @@ class ChatLogActivity : AppCompatActivity() {
                 val chatMessage = snapshot.getValue(ChatMessage::class.java)
                 if (chatMessage != null) {
                     if (chatMessage.fromId == FirebaseAuth.getInstance().uid) {
-                        val currentUser =
-                            LatestMessagesActivity.currentUser
-                        adapter.add(
-                            ChatItemRight(
-                                chatMessage.text,
-                                currentUser!!
-                            )
-                        )
+                        val currentUser = LatestMessagesPresenter.currentUser
+                        adapter.add(ChatItemRight(chatMessage.text, currentUser!!))
                     } else {
-                        adapter.add(
-                            ChatItemLeft(
-                                chatMessage.text,
-                                toUser!!
-                            )
-                        )
+                        adapter.add(ChatItemLeft(chatMessage.text, toUser!!))
                     }
                 }
             }
 
-            override fun onCancelled(error: DatabaseError) {
-            }
+            override fun onCancelled(error: DatabaseError) {}
 
-            override fun onChildMoved(snapshot: DataSnapshot, previousChildName: String?) {
-            }
+            override fun onChildMoved(snapshot: DataSnapshot, previousChildName: String?) {}
 
-            override fun onChildChanged(snapshot: DataSnapshot, previousChildName: String?) {
-            }
+            override fun onChildChanged(snapshot: DataSnapshot, previousChildName: String?) {}
 
-            override fun onChildRemoved(snapshot: DataSnapshot) {
-            }
-
+            override fun onChildRemoved(snapshot: DataSnapshot) {}
         })
     }
 

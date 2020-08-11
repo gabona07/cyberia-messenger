@@ -7,7 +7,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
 import android.widget.Toast
-import com.codecool.cyberia.LatestMessagesActivity
 import com.codecool.cyberia.R
 import com.codecool.cyberia.contract.RegistrationContract
 import com.codecool.cyberia.presenter.RegistrationPresenter
