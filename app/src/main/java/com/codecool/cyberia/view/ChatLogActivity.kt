@@ -2,7 +2,6 @@ package com.codecool.cyberia.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.codecool.cyberia.NewMessageActivity
 import com.codecool.cyberia.R
 import com.codecool.cyberia.contract.ChatLogContract
 import com.codecool.cyberia.model.User

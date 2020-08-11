@@ -11,7 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar">
-        <activity android:name=".SplashActivity">
+        <activity android:name=".misc.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,7 +21,7 @@
         <activity android:name=".view.RegistrationActivity" />
         <activity android:name=".view.LoginActivity" />
         <activity android:name=".view.LatestMessagesActivity"/>
-        <activity android:name=".NewMessageActivity">
+        <activity android:name=".view.NewMessageActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".view.LatestMessagesActivity" />

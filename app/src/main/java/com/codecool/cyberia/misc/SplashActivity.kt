@@ -1,9 +1,10 @@
-package com.codecool.cyberia
+package com.codecool.cyberia.misc
 
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import androidx.appcompat.app.AppCompatActivity
+import com.codecool.cyberia.R
 import com.codecool.cyberia.view.LatestMessagesActivity
 
 
