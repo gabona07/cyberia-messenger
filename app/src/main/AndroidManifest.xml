@@ -26,7 +26,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".view.LatestMessagesActivity" />
         </activity>
-        <activity android:name=".ChatLogActivity">
+        <activity android:name=".view.ChatLogActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".view.LatestMessagesActivity" />

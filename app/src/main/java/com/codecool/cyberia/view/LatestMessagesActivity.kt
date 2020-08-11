@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import androidx.recyclerview.widget.DividerItemDecoration
-import com.codecool.cyberia.ChatLogActivity
 import com.codecool.cyberia.LatestMessageRow
 import com.codecool.cyberia.NewMessageActivity
 import com.codecool.cyberia.R
