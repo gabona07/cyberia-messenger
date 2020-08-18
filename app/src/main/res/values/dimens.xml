@@ -11,4 +11,5 @@
     <dimen name="small_font">12sp</dimen>
     <dimen name="big_image">200dp</dimen>
     <dimen name="bigger_image">300dp</dimen>
+    <dimen name="splash_text_size">24sp</dimen>
 </resources>
