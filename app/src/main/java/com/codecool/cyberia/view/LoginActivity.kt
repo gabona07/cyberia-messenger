@@ -6,13 +6,13 @@ import android.os.Bundle
 import android.widget.Toast
 import com.codecool.cyberia.R
 import com.codecool.cyberia.contract.LoginContract
-import com.codecool.cyberia.presenter.LoginPresenter
 import kotlinx.android.synthetic.main.activity_login.*
+import org.koin.android.ext.android.inject
 import java.lang.Exception
 
 class LoginActivity : AppCompatActivity(), LoginContract.LoginView {
 
-    private val presenter: LoginContract.LoginPresenter = LoginPresenter()
+    private val presenter: LoginContract.LoginPresenter by inject()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -10,15 +10,15 @@ import com.codecool.cyberia.misc.LatestMessageRow
 import com.codecool.cyberia.R
 import com.codecool.cyberia.contract.LatestMessagesContract
 import com.codecool.cyberia.model.ChatMessage
-import com.codecool.cyberia.presenter.LatestMessagesPresenter
 import com.google.firebase.auth.FirebaseAuth
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.ViewHolder
 import kotlinx.android.synthetic.main.activity_latest_messages.*
+import org.koin.android.ext.android.inject
 import java.lang.Exception
 
 class LatestMessagesActivity : AppCompatActivity(), LatestMessagesContract.LatestMessagesView {
-    private val presenter = LatestMessagesPresenter()
+    private val presenter : LatestMessagesContract.LatestMessagesPresenter by inject()
     private val adapter = GroupAdapter<ViewHolder>()
 
     override fun onCreate(savedInstanceState: Bundle?) {

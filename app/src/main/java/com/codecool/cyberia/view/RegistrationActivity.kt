@@ -9,13 +9,13 @@ import android.provider.MediaStore
 import android.widget.Toast
 import com.codecool.cyberia.R
 import com.codecool.cyberia.contract.RegistrationContract
-import com.codecool.cyberia.presenter.RegistrationPresenter
 import kotlinx.android.synthetic.main.activity_register.*
+import org.koin.android.ext.android.inject
 import java.lang.Exception
 
 class RegistrationActivity : AppCompatActivity(), RegistrationContract.RegistrationView {
 
-    private val presenter: RegistrationContract.RegistrationPresenter = RegistrationPresenter()
+    private val presenter: RegistrationContract.RegistrationPresenter by inject()
     private var selectedPhotoUri: Uri? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {

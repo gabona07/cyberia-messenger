@@ -6,18 +6,18 @@ import android.os.Bundle
 import com.codecool.cyberia.R
 import com.codecool.cyberia.contract.NewMessageContract
 import com.codecool.cyberia.model.User
-import com.codecool.cyberia.presenter.NewMessagePresenter
 import com.squareup.picasso.Picasso
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.Item
 import com.xwray.groupie.ViewHolder
 import kotlinx.android.synthetic.main.activity_new_message.*
 import kotlinx.android.synthetic.main.user_row_new_message.view.*
+import org.koin.android.ext.android.inject
 import java.lang.Exception
 
 class NewMessageActivity : AppCompatActivity(), NewMessageContract.NewMessageView {
 
-    private val presenter = NewMessagePresenter()
+    private val presenter : NewMessageContract.NewMessagePresenter by inject()
 
     companion object {
         const val USER_KEY = "USER_NAME"

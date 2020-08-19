@@ -5,7 +5,6 @@ import android.os.Bundle
 import com.codecool.cyberia.R
 import com.codecool.cyberia.contract.ChatLogContract
 import com.codecool.cyberia.model.User
-import com.codecool.cyberia.presenter.ChatLogPresenter
 import com.google.firebase.auth.FirebaseAuth
 import com.squareup.picasso.Picasso
 import com.xwray.groupie.GroupAdapter
@@ -14,13 +13,14 @@ import com.xwray.groupie.ViewHolder
 import kotlinx.android.synthetic.main.activity_chat_log.*
 import kotlinx.android.synthetic.main.chat_left.view.*
 import kotlinx.android.synthetic.main.chat_right.view.*
+import org.koin.android.ext.android.inject
 import java.lang.Exception
 
 class ChatLogActivity : AppCompatActivity(), ChatLogContract.ChatLogView {
 
-    private val presenter = ChatLogPresenter()
-    val adapter = GroupAdapter<ViewHolder>()
-    var toUser: User? = null
+    private val presenter : ChatLogContract.ChatLogPresenter by inject()
+    private val adapter = GroupAdapter<ViewHolder>()
+    private var toUser: User? = null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
