@@ -4,7 +4,7 @@
 
    - Firebase Database for storing users and messages.<br/>
    - Firebase Storage for storing users' profile pictures.<br/>
-   - Firebase Authentication for user login and registration.</br/>
+   - Firebase Authentication for user login and registration.<br/>
    - Koin for dependency injection.<br/>
    - Picasso and CircleView for images.<br/>
    - Material design for the user interface.<br/>
