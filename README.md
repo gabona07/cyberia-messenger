@@ -8,3 +8,5 @@
    - Picasso and CircleView for images.<br/>
    - Material design for the user interface.<br/>
    - Groupie for making RecyclerView layout more dinamic.<br/>
+   <br/>
+ The project's structure was built by MVP design.
